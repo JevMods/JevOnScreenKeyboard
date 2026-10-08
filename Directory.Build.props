@@ -1,0 +1,23 @@
+<Project>
+  <Import Project="$(MSBuildThisFileDirectory)Environment.props" Condition="Exists('$(MSBuildThisFileDirectory)Environment.props')" />
+
+  <PropertyGroup>
+    <ValheimDir Condition="'$(ValheimDir)' == ''">$(VALHEIM_INSTALL)</ValheimDir>
+    <_RegValheim>$([MSBuild]::GetRegistryValueFromView('HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Steam App 892970', 'InstallLocation', null, RegistryView.Registry64, RegistryView.Registry32))</_RegValheim>
+    <_SteamPath>$([MSBuild]::GetRegistryValueFromView('HKEY_CURRENT_USER\SOFTWARE\Valve\Steam', 'SteamPath', null, RegistryView.Registry32))</_SteamPath>
+    <ValheimDir Condition="!Exists('$(ValheimDir)\valheim_Data')">$(_RegValheim)</ValheimDir>
+    <ValheimDir Condition="!Exists('$(ValheimDir)\valheim_Data')">$(_SteamPath)\steamapps\common\Valheim</ValheimDir>
+    <ValheimDir Condition="!Exists('$(ValheimDir)\valheim_Data')">C:\Program Files (x86)\Steam\steamapps\common\Valheim</ValheimDir>
+
+    <ProfileDir Condition="'$(ProfileDir)' == ''">$(APPDATA)\Thunderstore Mod Manager\DataFolder\Valheim\profiles\Default</ProfileDir>
+    <BepInExDir Condition="'$(BepInExDir)' == ''">$(ProfileDir)\BepInEx</BepInExDir>
+
+    <PluginDeployDir Condition="'$(PluginDeployDir)' == ''">$(BepInExDir)\plugins</PluginDeployDir>
+    <ManagedDir Condition="'$(ManagedDir)' == ''">$(ValheimDir)\valheim_Data\Managed</ManagedDir>
+  </PropertyGroup>
+
+  <Target Name="CheckGamePaths" BeforeTargets="ResolveAssemblyReferences" Condition="'$(MSBuildProjectExtension)' == '.csproj'">
+    <Error Condition="!Exists('$(ManagedDir)\assembly_valheim.dll')" Text="Valheim not found at '$(ValheimDir)'. Set VALHEIM_INSTALL or ValheimDir in Environment.props." />
+    <Error Condition="!Exists('$(BepInExDir)\core\BepInEx.dll')" Text="BepInEx not found at '$(BepInExDir)'. Install BepInExPack_Valheim in the Thunderstore Mod Manager profile, or set ProfileDir/BepInExDir." />
+  </Target>
+</Project>
