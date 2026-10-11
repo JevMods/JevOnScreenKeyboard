@@ -4,8 +4,8 @@ schemaVersion = "0.0.1"
 [package]
 namespace = "JevMods"
 name = "JevControllerKeyboard"
-versionNumber = "1.0.0"
-description = "On-screen keyboard for gamepad players. Pops up in text fields, hides when you go back to mouse. Xbox, PlayStation and Switch button glyphs. Native layouts for the game's languages, incl. Japanese, Korean and Chinese."
+versionNumber = "1.0.1"
+description = "DEPRECATED: renamed to JevOnScreenKeyboard. Install that one instead, this package will not be updated."
 websiteUrl = "https://github.com/JevMods/JevControllerKeyboard"
 containsNsfwContent = false
 

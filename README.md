@@ -1,3 +1,13 @@
+# DEPRECATED: JevControllerKeyboard is now JevOnScreenKeyboard
+
+THIS MOD IS DEPRECATED. IT HAS BEEN RENAMED TO JEVONSCREENKEYBOARD AND THIS PAGE WILL NOT BE UPDATED.
+
+Get the new one here: https://thunderstore.io/c/valheim/p/JevMods/JevOnScreenKeyboard/
+
+To switch, uninstall JevControllerKeyboard and install JevOnScreenKeyboard. Don't run both. The settings file is now `BepInEx/config/JevMods.JevOnScreenKeyboard.cfg`, so set `Scale` again if you changed it.
+
+Below is the old description.
+
 # JevControllerKeyboard
 
 Valheim has no on-screen keyboard for gamepads outside Steam Big Picture. This mod adds one. It pops up when a text field gets focus and goes away when you reach for the keyboard or mouse. It works with Xbox, PlayStation and Switch controllers and speaks every language the game does.

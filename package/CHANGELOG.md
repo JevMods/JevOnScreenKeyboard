@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.1
+
+- DEPRECATED. The mod was renamed to JevOnScreenKeyboard, install that one instead.
+- No other changes.
+
 ## 1.0.0
 
 - First release.
