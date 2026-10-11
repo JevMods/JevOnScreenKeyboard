@@ -1,8 +1,8 @@
-# JevControllerKeyboard
+# JevOnScreenKeyboard
 
 Valheim has no on-screen keyboard for gamepads outside Steam Big Picture. This mod adds one. It pops up when a text field gets focus and goes away when you reach for the keyboard or mouse. It works with Xbox, PlayStation and Switch controllers and speaks every language the game does.
 
-Screenshots are in [SCREENSHOTS.md](https://github.com/JevMods/JevControllerKeyboard/blob/main/SCREENSHOTS.md).
+Screenshots are in [SCREENSHOTS.md](https://github.com/JevMods/JevOnScreenKeyboard/blob/main/SCREENSHOTS.md).
 
 ## Features
 
@@ -26,30 +26,30 @@ Nothing needs to be held. D-pad, A, X, Y and the bumpers repeat if you do hold t
 
 ## Configuration
 
-The settings are in `BepInEx/config/JevMods.JevControllerKeyboard.cfg`, created on first launch.
+The settings are in `BepInEx/config/JevMods.JevOnScreenKeyboard.cfg`, created on first launch.
 
 - `Scale`: size of the keyboard, from 0.5 to 2 (default `1`).
 
 ## Feedback
 
-Found a bug or have an idea for a change? Open an issue on the [GitHub issues page](https://github.com/JevMods/JevControllerKeyboard/issues). Refactoring suggestions are welcome too. I'll go through everything as fast as I can.
+Found a bug or have an idea for a change? Open an issue on the [GitHub issues page](https://github.com/JevMods/JevOnScreenKeyboard/issues). Refactoring suggestions are welcome too. I'll go through everything as fast as I can.
 
 ## Building from source
 
 To build you need Windows, the .NET SDK 8 or newer (with the .NET Framework 4.8 developer pack), Valheim and BepInEx. The easiest way to get BepInEx is to install BepInExPack_Valheim in a Thunderstore Mod Manager profile.
 
 ```
-git clone https://github.com/JevMods/JevControllerKeyboard.git
-cd JevControllerKeyboard
-dotnet build src/JevControllerKeyboard -c Release
+git clone https://github.com/JevMods/JevOnScreenKeyboard.git
+cd JevOnScreenKeyboard
+dotnet build src/JevOnScreenKeyboard -c Release
 ```
 
-Then copy `src/JevControllerKeyboard/bin/Release/JevControllerKeyboard.dll` into `BepInEx/plugins`.
+Then copy `src/JevOnScreenKeyboard/bin/Release/JevOnScreenKeyboard.dll` into `BepInEx/plugins`.
 
 The build looks for Valheim through Steam and for BepInEx in the Default profile of the Thunderstore Mod Manager. If yours live elsewhere, pass the paths:
 
 ```
-dotnet build src/JevControllerKeyboard -c Release -p:ValheimDir="D:\Games\Valheim" -p:BepInExDir="D:\Games\Valheim\BepInEx"
+dotnet build src/JevOnScreenKeyboard -c Release -p:ValheimDir="D:\Games\Valheim" -p:BepInExDir="D:\Games\Valheim\BepInEx"
 ```
 
 You can also set the `VALHEIM_INSTALL` environment variable. With no Valheim install at all, point `ManagedDir` at the `valheim_server_Data/Managed` folder of the free Valheim Dedicated Server (Steam app 896660). The GitHub workflow does exactly that.
@@ -57,4 +57,5 @@ You can also set the `VALHEIM_INSTALL` environment variable. With no Valheim ins
 ## Notes
 
 - Client-side: only the player who wants the keyboard needs to install it.
-- Source: https://github.com/JevMods/JevControllerKeyboard
+- Formerly published as JevControllerKeyboard.
+- Source: https://github.com/JevMods/JevOnScreenKeyboard

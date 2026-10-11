@@ -3,10 +3,10 @@ schemaVersion = "0.0.1"
 
 [package]
 namespace = "JevMods"
-name = "JevControllerKeyboard"
-versionNumber = "1.0.0"
+name = "JevOnScreenKeyboard"
+versionNumber = "1.1.0"
 description = "On-screen keyboard for gamepad players. Pops up in text fields, hides when you go back to mouse. Xbox, PlayStation and Switch button glyphs. Native layouts for the game's languages, incl. Japanese, Korean and Chinese."
-websiteUrl = "https://github.com/JevMods/JevControllerKeyboard"
+websiteUrl = "https://github.com/JevMods/JevOnScreenKeyboard"
 containsNsfwContent = false
 
 [package.dependencies]
@@ -18,7 +18,7 @@ readme = "./README.md"
 outdir = "./dist"
 
 [[build.copy]]
-source = "./src/JevControllerKeyboard/bin/Release/JevControllerKeyboard.dll"
+source = "./src/JevOnScreenKeyboard/bin/Release/JevOnScreenKeyboard.dll"
 target = "/"
 
 [[build.copy]]
